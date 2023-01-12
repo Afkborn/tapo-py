@@ -13,6 +13,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_LoginScreen):
         # check if loginInfo.txt exists
         self.setupUi(self)
         fileLoc = getcwd() + "/loginInfo.txt"
+        self.btn_Login.clicked.connect(self.login)
+        self.homeForm = HomeForm(self)
         if (path.exists(fileLoc) == True):
             with open(fileLoc, "r") as f:
                 loginInfo = f.read().split(",")
@@ -20,9 +22,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_LoginScreen):
                 self.txt_pass.setText(loginInfo[1])
                 self.txt_ip.setText(loginInfo[2])
                 self.cb_rememberMe.setChecked(True)
+                self.login()
 
-        self.btn_Login.clicked.connect(self.login)
-        self.homeForm = HomeForm(self)
+        
+        
 
     def login(self):
         email = self.txt_email.text()
