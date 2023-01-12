@@ -18,6 +18,9 @@ class Ui_LoginScreen(object):
         font = QtGui.QFont()
         font.setPointSize(12)
         LoginScreen.setFont(font)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("C:/Users/bb459/Desktop/large.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        LoginScreen.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(LoginScreen)
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
@@ -65,7 +68,7 @@ class Ui_LoginScreen(object):
 
     def retranslateUi(self, LoginScreen):
         _translate = QtCore.QCoreApplication.translate
-        LoginScreen.setWindowTitle(_translate("LoginScreen", "MainWindow"))
+        LoginScreen.setWindowTitle(_translate("LoginScreen", "Login Device | TP-Link Tapo"))
         self.label_3.setText(_translate("LoginScreen", "IP Adresi"))
         self.label.setText(_translate("LoginScreen", "E Posta"))
         self.txt_ip.setPlaceholderText(_translate("LoginScreen", "192.168.X.X"))

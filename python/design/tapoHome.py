@@ -23,6 +23,9 @@ class Ui_HomeScreen(object):
         font = QtGui.QFont()
         font.setPointSize(12)
         HomeScreen.setFont(font)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("C:/Users/bb459/Desktop/large.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        HomeScreen.setWindowIcon(icon)
         self.gridLayoutWidget = QtWidgets.QWidget(HomeScreen)
         self.gridLayoutWidget.setGeometry(QtCore.QRect(10, 10, 501, 246))
         self.gridLayoutWidget.setObjectName("gridLayoutWidget")
@@ -258,7 +261,7 @@ class Ui_HomeScreen(object):
 
     def retranslateUi(self, HomeScreen):
         _translate = QtCore.QCoreApplication.translate
-        HomeScreen.setWindowTitle(_translate("HomeScreen", "Form"))
+        HomeScreen.setWindowTitle(_translate("HomeScreen", "Home | TP-Link Tapo"))
         self.lbl_mac.setText(_translate("HomeScreen", "mac_addr"))
         self.lbl_fwver.setText(_translate("HomeScreen", "fw_ver"))
         self.label_5.setText(_translate("HomeScreen", "Overheated:"))
