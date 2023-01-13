@@ -3,7 +3,7 @@ from python.design.loginScreen import Ui_LoginScreen
 from os import getcwd, path
 from PyP100 import PyL530
 
-
+from PyQt5.QtWidgets import QMessageBox
 from python.HomeForm import HomeForm
 
 
@@ -40,7 +40,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_LoginScreen):
             l530.login()
             self.showHomeForm(l530)
         except Exception as e:
-            print(e)
+            QMessageBox.about(self, "Hata", "Bir hata oluştu. Lütfen bilgilerinizi kontrol edin.")
             
 
     def showHomeForm(self, l530):
