@@ -10,7 +10,6 @@ from python.HomeForm import HomeForm
 class MainWindow(QtWidgets.QMainWindow, Ui_LoginScreen):
     def __init__(self, *args, obj=None, **kwargs):
         super(MainWindow, self).__init__(*args, **kwargs)
-        # check if loginInfo.txt exists
         self.setupUi(self)
         fileLoc = getcwd() + "/loginInfo.txt"
         self.btn_Login.clicked.connect(self.login)
